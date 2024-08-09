@@ -105,8 +105,8 @@ namespace Enhancements.UI.Breaktime
 
         private void ModifyVisuals(Profile profile)
         {
-            image.color = profile.ImageColor.ColorWithAlpha(profile.ImageOpacity);
-            text.color = profile.TextColor.ColorWithAlpha(profile.ImageOpacity);
+            image.color = new Color(image.color.r, image.color.g, image.color.b, profile.ImageOpacity);
+            text.color = new Color(text.color.r, text.color.g, text.color.b, profile.ImageOpacity);
         }
 
         internal IEnumerator UpdateText(float endPoint)

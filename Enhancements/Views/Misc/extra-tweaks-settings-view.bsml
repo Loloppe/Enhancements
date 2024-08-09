@@ -10,7 +10,7 @@
       </vertical>
     </vertical>
     <vertical pref-width="40" pad="2">
-      <text text="Prevents old maps with BPM changes from being detected as 360 maps." />
+      <text text="Prevents old maps with BPM &#xA; changes from being detected &#xA; as 360 maps." />
     </vertical>
   </horizontal>
   <horizontal bg="round-rect-panel" bg-color="grey" pad="2">
@@ -23,7 +23,7 @@
       </vertical>
     </vertical>
     <vertical pref-width="40" pad="2" child-align="MiddleCenter">
-      <text text="Makes the pause menu buttons inactive for 0.75 seconds in order to prevent accidentally pressing pause and immediately pressing them." />
+      <text text="Makes the pause menu buttons &#xA; inactive for 0.75 seconds in &#xA; order to prevent accidentally &#xA; pressing pause and &#xA; immediately pressing them." />
     </vertical>
   </horizontal>
 </vertical>

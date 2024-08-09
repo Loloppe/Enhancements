@@ -2,10 +2,10 @@
   <horizontal bg="panel-top" bg-color="green" pref-width="120">
     <text text="Breaktime" align="Center" font-size="10" />
   </horizontal>
-  <horizontal pad="2" bg="round-rect-panel" bg-color="grey" pref-width="80">
-    <vertical pref-width="80">
-      <text text="Inspired by the breaktime effect from osu!. When there is a significant break in the level you are playing, a customizable notification appears and tells you how much time there is until the next note." align="Center" />
-      <img id="example" pref-width="50" pref-height="30" preserve-aspect="true" />
-    </vertical>
-  </horizontal>
+	<horizontal spacing="10" bg="round-rect-panel" bg-color="grey" pad="2">
+		<vertical pref-width="100">
+			<text text="Inspired by the breaktime effect from osu!. &#xA; When there is a significant break in the level you are playing, &#xA; a customizable notification appears and tells you how much time there is until the next note." align="Center" />
+			<!--<img id="example" pref-width="50" pref-height="30" preserve-aspect="true" />-->
+		</vertical>
+	</horizontal>
 </vertical>

@@ -6,6 +6,7 @@ using System.Globalization;
 using BeatSaberMarkupLanguage.FloatingScreen;
 using VRUIControls;
 using IPA.Utilities;
+using Enhancements.Breaktime;
 
 namespace Enhancements.Clock
 {
@@ -65,7 +66,7 @@ namespace Enhancements.Clock
                 {
                     _basicClockView.ClockSize = _clockSettings.Size;
                     _basicClockView.Font = _loader.GetFont(_clockSettings.Font);
-                    _basicClockView.ClockColor = _clockSettings.Color.ColorWithAlpha(_clockSettings.Opacity);
+                    _basicClockView.ClockColor = new Color(_clockSettings.Color.r, _clockSettings.Color.g, _clockSettings.Color.b, _clockSettings.Opacity);
                     _floatingScreen.ScreenPosition = _clockSettings.Position;
                     _floatingScreen.ScreenRotation = Quaternion.Euler(_clockSettings.Rotation);
                     _clockSettings.IsDirty = false;

@@ -22,8 +22,7 @@ namespace Enhancements.Timers
 
         public ITimeNotification NextNotification()
         {
-            _queue.TryDequeue(out ITimeNotification notif);
-            return notif;
+            return _queue.Count == 0 ? null : _queue.Dequeue();
         }
 
         public void Initialize()
@@ -37,7 +36,7 @@ namespace Enhancements.Timers
             {
                 return;
             }
-            if ((!_settings.NotifyInGame && _gameScenesManager.currentScenesContainer.TryResolve<IDifficultyBeatmap>() != null) || IsViewing)
+            if ((!_settings.NotifyInGame && _gameScenesManager.currentScenesContainer.TryResolve<GameplayCoreSceneSetupData>() != null) || IsViewing)
             {
                 _queue.Enqueue(notification);
             }

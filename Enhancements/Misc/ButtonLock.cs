@@ -12,9 +12,6 @@ namespace Enhancements.Misc
         private PauseMenuManager _pauseMenuManager;
         private IMenuButtonTrigger _menuButtonTrigger;
         private MultiplayerLocalActivePlayerInGameMenuViewController _multiplayerLocalActivePlayerInGameMenuViewController;
-        private bool _menuPrev;
-        private bool _restartPrev;
-        private bool _continuePrev;
 
         private Button _menuButton;
         private Button _restartButton;
@@ -58,10 +55,6 @@ namespace Enhancements.Misc
         {
             if (_pauseMenuManager != null || _multiplayerLocalActivePlayerInGameMenuViewController != null)
             {
-                _menuPrev = _menuButton.interactable;
-                _restartPrev = _restartButton.interactable;
-                _continuePrev = _continueButton.interactable;
-
                 _menuButton.interactable = !_miscSettings.ButtonLockMenu;
                 _restartButton.interactable = !_miscSettings.ButtonLockRestart;
                 _continueButton.interactable = !_miscSettings.ButtonLockContinue;
@@ -73,9 +66,9 @@ namespace Enhancements.Misc
         private IEnumerator MakeInteractable()
         {
             yield return new WaitForSecondsRealtime(0.5f);
-            _menuButton.interactable = _menuPrev;
-            _restartButton.interactable = _restartPrev;
-            _continueButton.interactable = _continuePrev;
+            _menuButton.interactable = true;
+            _restartButton.interactable = true;
+            _continueButton.interactable = true;
         }
 
         protected void OnDestroy()

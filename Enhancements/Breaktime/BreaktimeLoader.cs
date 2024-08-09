@@ -18,14 +18,12 @@ namespace Enhancements.Breaktime
 
         private readonly BreaktimeSettings _settings;
         private readonly AudioClipAsyncLoader _audioClipAsyncLoader;
-        private readonly CachedMediaAsyncLoader _cachedMediaAsyncLoader;
         private readonly CancellationTokenSource _cancellationTokenSource;
 
-        public BreaktimeLoader(BreaktimeSettings settings, AudioClipAsyncLoader audioClipAsyncLoader, CachedMediaAsyncLoader cachedMediaAsyncLoader)
+        public BreaktimeLoader(BreaktimeSettings settings, AudioClipAsyncLoader audioClipAsyncLoader)
         {
             _settings = settings;
             _audioClipAsyncLoader = audioClipAsyncLoader;
-            _cachedMediaAsyncLoader = cachedMediaAsyncLoader;
             _cancellationTokenSource = new CancellationTokenSource();
             if (!Directory.Exists(IMAGE_FOLDER))
             {
@@ -72,7 +70,7 @@ namespace Enhancements.Breaktime
             {
                 try
                 {
-                    spr = await _cachedMediaAsyncLoader.LoadSpriteAsync(Path.Combine(IMAGE_FOLDER, profile.ImagePath), _cancellationTokenSource.Token);
+                    spr = await MediaAsyncLoader.LoadSpriteAsync(Path.Combine(IMAGE_FOLDER, profile.ImagePath), _cancellationTokenSource.Token);
                 }
                 catch { }
             }

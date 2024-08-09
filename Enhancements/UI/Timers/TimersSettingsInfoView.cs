@@ -13,8 +13,8 @@ namespace Enhancements.UI.Timers
     {
         private TimerSettings _settings;
 
-        [UIComponent("example")]
-        protected Image exampleImage;
+        /*[UIComponent("example")]
+        protected Image exampleImage;*/
 
         [UIValue("enabled")]
         protected bool Enabled
@@ -39,10 +39,10 @@ namespace Enhancements.UI.Timers
         protected override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling)
         {
             base.DidActivate(firstActivation, addedToHierarchy, screenSystemEnabling);
-            if (firstActivation)
+            /*if (firstActivation)
             {
                 exampleImage.SetImage("http://cdn.auros.dev/sira/enhancements/timers.gif");
-            }
+            }*/
         }
     }
 }

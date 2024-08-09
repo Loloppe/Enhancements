@@ -3,9 +3,12 @@
     public static class Constants
     {
         internal const string AUROSDEV = "https://donate.auros.dev";
-        internal const string LATESTRELEASE = "https://github.com/Auros/Enhancements/releases/latest";
+        internal const string LATESTRELEASE = "https://github.com/loloppe/Enhancements/releases/latest";
 
         internal const string CHANGELOG = @"
+        <size=150%><color=#888888>VERSION 3.0.15</color></size>
+        -    Updated for Beat Saber 1.37.2
+
         <size=150%><color=#888888>VERSION 3.0.10</color></size>
         -    Updated for Beat Saber 1.16.3
 
