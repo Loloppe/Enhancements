@@ -103,7 +103,7 @@ namespace Enhancements.Timers
         [UIAction("#post-parse")]
         protected void Parsed()
         {
-            var modalGO = dropdownSetting.dropdown.GetField<ModalView, DropdownWithTableView>("_modalView").gameObject;
+            var modalGO = dropdownSetting.Dropdown.GetField<ModalView, DropdownWithTableView>("_modalView").gameObject;
             modalGO.transform.localPosition = new Vector3(modalGO.transform.localPosition.x, modalGO.transform.localPosition.y, -5f);
             snoozeModal.transform.localPosition = new Vector3(snoozeModal.transform.localPosition.x, snoozeModal.transform.localPosition.y, -10f);
         }

@@ -101,8 +101,8 @@ namespace Enhancements.Timers
         [UIAction("#post-parse")]
         protected void Parsed()
         {
-            stringSetting.modalKeyboard.transform.localPosition = new Vector3(0f, 0f, -10f);
-            var modalGO = dropdownSetting.dropdown.GetField<ModalView, DropdownWithTableView>("_modalView").gameObject;
+            stringSetting.ModalKeyboard.transform.localPosition = new Vector3(0f, 0f, -10f);
+            var modalGO = dropdownSetting.Dropdown.GetField<ModalView, DropdownWithTableView>("_modalView").gameObject;
             modalGO.transform.localPosition = new Vector3(modalGO.transform.localPosition.x, modalGO.transform.localPosition.y, -5f);
 
             cancelButton.gameObject.SetActive(true);

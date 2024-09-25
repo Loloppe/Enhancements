@@ -32,7 +32,7 @@ namespace Enhancements.UI
         [UIAction("option-selected")]
         protected void OptionSelected(TableView _, int id)
         {
-            DidSelectSettingOption?.Invoke(tableList.data[id].text.Split('\n')[0], id);
+            DidSelectSettingOption?.Invoke(tableList.Data[id].Text.Split('\n')[0], id);
         }
 
         [UIAction("#post-parse")]
@@ -80,9 +80,9 @@ namespace Enhancements.UI
             };
             foreach (var element in newCustomCellInfo)
             {
-                tableList.data.Add(element);
+                tableList.Data.Add(element);
             }
-            tableList.tableView.ReloadData();
+            tableList.TableView.ReloadData();
             SelectFirstCell();
         }
 
@@ -94,7 +94,7 @@ namespace Enhancements.UI
 
         public void SelectFirstCell()
         {
-            tableList?.tableView.SelectCellWithIdx(0);
+            tableList?.TableView.SelectCellWithIdx(0);
         }
         protected override void DidDeactivate(bool removedFromHierarchy, bool screenSystemDisabling)
         {
