@@ -5,7 +5,6 @@
   <horizontal pref-width="70" spacing="10" bg="round-rect-panel" bg-color="grey" pad="2">
     <text text="This section is for any miscellaneous features that aren't big enough to have their own category.&lt;br&gt;
           Features:&lt;br&gt;
-          - Button Lock&lt;br&gt;
-          - Legacy VBPM 360 Map Fix&lt;br&gt;" />
+          - Button Lock&lt;br&gt;" />
   </horizontal>
 </vertical>

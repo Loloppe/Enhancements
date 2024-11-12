@@ -11,12 +11,12 @@ namespace Enhancements.UI.Misc
     {
         private MiscSettings _settings;
 
-        [UIValue("bpm-fix")]
+        /*[UIValue("bpm-fix")]
         protected bool BPMFix
         {
             get => _settings.BPMFixEnabled;
             set => _settings.BPMFixEnabled = value;
-        }
+        }*/
 
         [UIValue("bl-menu")]
         protected bool ButtonLockMenu

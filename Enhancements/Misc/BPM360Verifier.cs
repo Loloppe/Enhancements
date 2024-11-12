@@ -1,4 +1,4 @@
-﻿using Zenject;
+﻿/*using Zenject;
 using HarmonyLib;
 using IPA.Utilities;
 using Enhancements.Misc;
@@ -42,4 +42,4 @@ namespace Enhancements.Misc
             return container;
         }
     }
-}
+}*/
