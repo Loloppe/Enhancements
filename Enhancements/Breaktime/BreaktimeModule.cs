@@ -132,10 +132,12 @@ namespace Enhancements.UI.Breaktime
             }
             if (isAnimatedImage)
             {
-                image.SetImage(Path.Combine(BreaktimeLoader.IMAGE_FOLDER, profile.ImagePath));
+                Plugin.Log.Error("1");
+                image.SetImageAsync(Path.Combine(BreaktimeLoader.IMAGE_FOLDER, profile.ImagePath));
             }
             else if (spr != null)
             {
+                Plugin.Log.Error("2");
                 spr.texture.wrapMode = TextureWrapMode.Clamp;
                 image.sprite = spr;
             }

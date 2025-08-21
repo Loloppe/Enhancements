@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Enhancements
 {
@@ -32,22 +33,27 @@ namespace Enhancements
 
                 // Load Fonts
                 _cachedTekoFont = Resources.FindObjectsOfTypeAll<TMP_FontAsset>().LastOrDefault(f2 => f2.name == "Teko-Medium SDF");
-                var fonts = bundle.LoadAllAssets<TMP_FontAsset>();
+
+                // Broke on version 1.40.9. Can't bother to fix at the moment, probably need to modify the AssetBundle.
+                /* var fonts = bundle.LoadAllAssets<TMP_FontAsset>();
                 for (int i = 0; i < fonts.Length; i++)
                 {
                     var font = Setup(fonts[i]);
                     _fonts.Add(font.name.Split(new string[] { "SDF" }, StringSplitOptions.RemoveEmptyEntries)[0].Trim(' '), font);
-                }
+                }*/
+
+                _fonts.Add(_cachedTekoFont.name.Split(new string[] { "SDF" }, StringSplitOptions.RemoveEmptyEntries)[0].Trim(' '), _cachedTekoFont);
+
                 _didLoad = true;
             }
         }
 
-        public Sprite GetIcon(string name)
+        public async Task<Sprite> GetIcon(string name)
         {
             string source = name + ".png";
             if (!_sprites.TryGetValue(source, out Sprite sprite))
             {
-                var tex = BeatSaberMarkupLanguage.Utilities.FindTextureInAssembly(RESOURCE_PATH + source);
+                var tex = await BeatSaberMarkupLanguage.Utilities.LoadTextureFromAssemblyAsync(RESOURCE_PATH + source);
                 tex.wrapMode = TextureWrapMode.Clamp;
                 sprite = BeatSaberMarkupLanguage.Utilities.LoadSpriteFromTexture(tex, 300);
                 if (sprite != null)
@@ -74,8 +80,8 @@ namespace Enhancements
         private TMP_FontAsset Setup(TMP_FontAsset f)
         {
             var originalFont = _cachedTekoFont;
-            
             var matCopy = UnityEngine.Object.Instantiate(originalFont.material);
+
             matCopy.mainTexture = f.material.mainTexture;
             matCopy.mainTextureOffset = f.material.mainTextureOffset;
             matCopy.mainTextureScale = f.material.mainTextureScale;

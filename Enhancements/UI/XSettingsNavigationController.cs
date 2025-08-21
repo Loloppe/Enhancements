@@ -36,7 +36,7 @@ namespace Enhancements.UI
         }
 
         [UIAction("#post-parse")]
-        protected void Parsed()
+        protected async void Parsed()
         {
             CustomListTableData.CustomCellInfo[] newCustomCellInfo = new CustomListTableData.CustomCellInfo[]
             {
@@ -44,38 +44,38 @@ namespace Enhancements.UI
                 (
                     "Changelog\n",
                     "The changelog for Enhancements",
-                    _loader.GetIcon("changelog")
+                    await _loader.GetIcon("changelog")
                     
                 ),
                 new CustomListTableData.CustomCellInfo
                 (
                     "Clock\n",
                     "Modify the Clock",
-                    _loader.GetIcon("clock")
+                    await _loader.GetIcon("clock")
                 ),
                 new CustomListTableData.CustomCellInfo
                 (
                     "Timers\n",
                     "Create Reminders In Game!",
-                    _loader.GetIcon("timer")
+                    await _loader.GetIcon("timer")
                 ),
                 new CustomListTableData.CustomCellInfo
                 (
                     "Breaktime\n",
                     "Get Information During Song Breaks!",
-                    _loader.GetIcon("breaktime")
+                    await _loader.GetIcon("breaktime")
                 ),
                 new CustomListTableData.CustomCellInfo
                 (
                     "Volume\n",
                     "Change Specific Volume Settings",
-                    _loader.GetIcon("volume")
+                    await _loader.GetIcon("volume")
                 ),
                 new CustomListTableData.CustomCellInfo
                 (
                     "Mini Settings\n",
                     "Miscellaneous Tweaks",
-                    _loader.GetIcon("settings")
+                    await _loader.GetIcon("settings")
                 )
             };
             foreach (var element in newCustomCellInfo)
